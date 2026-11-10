@@ -1,0 +1,3 @@
+已上线：https://4mfqc4erd4fdg.doubao.link/app/app_17hsmwp6fbg
+app_id: app_17hsmwp6fbg
+复发布：cd 到本目录后 lark-cli apps +deploy --file-path ./index.html --app-id app_17hsmwp6fbg

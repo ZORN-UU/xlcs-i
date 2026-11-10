@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e6dfd0">
+<title>抛开颜值你的性格在男女关系中值多少分</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#e6dfd0;--card:#fffdf7;--ink:#141414;--muted:#8b8171;--line:#ded5c4;--accent:#b23a28;--hi:#f5e07a}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;font-size:16px;line-height:1.7}
+#app{max-width:460px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:18px 20px 28px}
+section{display:none;flex:1;flex-direction:column}
+section.on{display:flex;animation:fade .3s ease both}
+#result.on{justify-content:center}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.nav{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);letter-spacing:.12em;padding:6px 0 20px}
+.nav b{font-weight:400}
+.nav .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:7px;display:inline-block;vertical-align:1px}
+h1{font-size:34px;line-height:1.42;font-weight:800;letter-spacing:-.02em;margin:10px 0 16px;text-align:center}
+.lead{font-size:15px;color:#5f584c;line-height:1.9;text-align:center}
+.meta{margin:0;font-size:12.5px;color:var(--muted);letter-spacing:.02em;text-align:center}
+.demo{margin-top:26px;background:var(--card);border-radius:20px;padding:4px 16px;box-shadow:0 6px 22px rgba(80,60,30,.07)}
+.dr{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #f2ecdd}
+.dr:last-child{border-bottom:0}
+.av{flex:0 0 28px;height:28px;border-radius:50%;background:#efe7d6;color:#94897a;font-size:13px;display:flex;align-items:center;justify-content:center}
+.nm{font-size:14px;color:#4a4438;letter-spacing:.01em}
+.nm em{font-style:normal;color:#a99e89}
+.cta{margin:auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.btn{width:80%;max-width:300px;border:0;border-radius:100px;background:var(--accent);color:#fffdf7;font-size:17px;letter-spacing:.1em;padding:17px 0;font-family:inherit;font-weight:600}
+.btn:active{opacity:.85}
+.qhead{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:9px}
+.cnt{font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.cnt em{font-style:normal;font-size:23px;font-weight:800;color:var(--ink);margin-right:3px}
+.hint{font-size:11px;color:#a2977f;padding-bottom:4px}
+.bar{height:4px;border-radius:100px;background:#fff6e9;overflow:hidden;margin-bottom:24px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:100px;transition:width .28s ease}
+.qtext{font-size:23px;font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-bottom:22px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:100px;padding:15px 20px;font-size:16px;line-height:1.5;color:var(--ink);font-family:inherit}
+.opt:active{background:#141414;color:var(--card);border-color:#141414}
+.back{margin-top:18px;font-size:13px;color:var(--muted);background:none;border:0;font-family:inherit;align-self:center}
+.loading{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+.loading p{font-size:14px;color:#5f584c;letter-spacing:.06em}
+.lbar{width:180px;height:4px;background:#fff6e9;border-radius:100px;overflow:hidden}
+.lbar i{display:block;height:100%;width:0;background:var(--accent);border-radius:100px;animation:fill 1s ease forwards}
+@keyframes fill{to{width:100%}}
+.card{background:var(--card);border-radius:26px;padding:19px 20px 17px;box-shadow:0 8px 28px rgba(80,60,30,.08)}
+.rk{font-size:12.5px;color:var(--muted);letter-spacing:.02em;text-align:center;line-height:1.9}
+.rk .sc{display:inline-block;margin-left:6px;color:var(--accent);font-weight:800;font-size:22px;letter-spacing:.01em;vertical-align:-1px}
+.rw{display:inline-block;font-size:52px;font-weight:800;line-height:1.3;letter-spacing:.04em;margin:2px 0;background:linear-gradient(transparent 60%,var(--hi) 60%);padding:0 4px}
+.rtop{text-align:center}
+.rs{font-size:15.5px;color:#5f584c;margin-bottom:9px;text-align:center}
+.fig{display:flex;justify-content:center;margin:0 0 4px}
+.fig svg{width:114px;height:114px}
+.rtags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:9px;justify-content:center}
+.rtag{font-size:13px;color:#7a6c58;background:#f3ecdd;border-radius:100px;padding:6px 13px}
+.rcard{background:#ebe2d1;color:#2b2620;border-radius:18px;padding:14px 16px;font-size:16px;line-height:1.62;letter-spacing:.01em;border:1px solid #ded5c4}
+.concl{margin-top:8px;padding-top:9px;border-top:1px solid var(--line);text-align:center}
+.concl b{display:block;font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:400;margin-bottom:8px}
+.concl p{font-size:13px;color:#6b6152;line-height:1.85}
+.share{margin-top:15px;width:100%;border:0;border-radius:100px;background:var(--accent);color:#fffdf7;font-size:16px;font-weight:600;letter-spacing:.08em;padding:15px 0;font-family:inherit}
+.share:active{opacity:.85}
+.again{display:block;margin:13px auto 0;background:none;border:0;font-size:13px;color:var(--muted);text-decoration:underline;font-family:inherit}
+.foot{margin-top:10px;padding-top:10px;font-size:11px;color:#a99e89;line-height:1.8;text-align:center}
+.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:rgba(20,20,20,.93);color:#fffdf7;font-size:13px;padding:11px 18px;border-radius:100px;opacity:0;pointer-events:none;transition:opacity .25s;white-space:nowrap}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div id="app">
+<section id="intro" class="on">
+  <div class="nav"><span><i class="dot"></i>关系位置 · 性格值几分</span><span></span></div>
+  <h1>抛开颜值<br>你的性格在男女关系中<br>值多少分</h1>
+  <p class="lead">脸决定第一眼，位置决定他为什么不走。<br>这个只问后者。</p>
+  <div class="cta">
+    <button class="btn" id="start">开 始</button>
+    <p class="meta">30 题 · 约 3 分钟 · 没有正确答案</p>
+  </div>
+</section>
+<section id="quiz">
+  <div class="nav"><span><i class="dot"></i>关系位置 · 性格值几分</span><span>答题</span></div>
+  <div class="qhead"><div class="cnt"><em id="num">1</em>/ 30</div><div class="hint">选最像你的那个</div></div>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="qtext" id="qtext"></div>
+  <div class="opts" id="opts"></div>
+  <button class="back" id="back">← 上一题</button>
+</section>
+<section id="loading">
+  <div class="loading"><p>正在算你在哪一栏…</p><div class="lbar"><i></i></div></div>
+</section>
+<section id="result">
+  <div class="nav"><span><i class="dot"></i>关系位置 · 性格值几分</span><span>结果</span></div>
+  <div class="card">
+    <div class="rtop">
+      <div class="rk" id="rk">你的性格值</div>
+      <div class="rw" id="rword"></div>
+      <div class="rs" id="rsub"></div>
+    </div>
+    <div class="fig" id="fig"></div>
+    <div class="rtags" id="rtags"></div>
+    <div class="rcard" id="rcard"></div>
+    <div class="concl"><b>结 语</b><p id="rconcl">这个分只说你现在的位置，不说你是什么人。</p></div>
+  </div>
+  <button class="share" id="share">保存并分享</button>
+  <button class="again" id="again">重新走一遍</button>
+  <div class="foot">娱乐性质，与品牌无关。<br>不做心理诊断，不构成任何建议。</div>
+</section>
+</div>
+<div class="toast" id="toast">截图保存这张卡片，直接发出去就行。</div>
+<script>
+var RESULTS = {"anchor": {"w": "定心丸", "sub": "性格优势在「稳」这一栏。", "card": "90 分，优势在「稳」。他一慌，第一个拨的是你——这种位置，学不来，也换不来。", "tags": ["出事先找你", "稳得住", "不跑"], "f": "anchor", "sc": "90", "concl": "这个分高，不是因为你多会说话，是因为你稳。<br>脸会旧，稳不会。"}, "bubble": {"w": "解语花", "sub": "性格优势在「懂」这一栏。", "card": "80 分，优势在「懂」。你能听出别人没说出口的那半句，很多人一辈子都没被这样听懂过。", "tags": ["听得懂人", "会接话", "让人放松"], "f": "bubble", "sc": "80", "concl": "80 分不是顶格，但你听得懂人。<br>脸让人开口，听懂才让人说下去。"}, "toolbox": {"w": "万金油", "sub": "性格优势在「顶得上」这一栏。", "card": "70 分，优势在「顶得上」。什么场合都能上的人不多，你是被需要的那一种，这叫本事。", "tags": ["什么都能顶", "场合通吃", "靠得住"], "f": "toolbox", "sc": "70", "concl": "70 分是中上，你什么场合都能顶。<br>脸让人看见你，顶得上才让人留下你。"}, "limited": {"w": "限量版", "sub": "性格优势在「不一样」这一栏。", "card": "60 分，优势在「不一样」。你不量产，你有棱角；能被人记住的，从来不是最好相处的那个。", "tags": ["有棱角", "不量产", "让人记住"], "f": "limited", "sc": "60", "concl": "60 分不算高分。你不是好相处的那种人，<br>但你会被记住。脸给不了这个。"}, "water": {"w": "白开水", "sub": "性格优势在「干净」这一栏。", "card": "50 分，优势在「干净」。白开水不加糖，也不掺东西；能一直这样干净的人，很少。", "tags": ["不掺东西", "干净", "不讨好"], "f": "water", "sc": "50", "concl": "50 分在这套里偏低，因为你不会表演。<br>脸让人多看两眼，不掺东西才让人待得住。"}};
+var FIGURES = {"card": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M52.5 51 L45 38\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M67.5 51 L75 38\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"43\" y=\"4\" width=\"34\" height=\"26\" rx=\"2.5\" fill=\"#fffdf7\" stroke=\"#141414\" stroke-width=\"1.5\"/><rect x=\"49\" y=\"20\" width=\"22\" height=\"3\" rx=\"1.5\" fill=\"#b23a28\"/><circle cx=\"45\" cy=\"31\" r=\"3.2\" fill=\"#141414\"/><circle cx=\"75\" cy=\"31\" r=\"3.2\" fill=\"#141414\"/></svg>", "key": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M67.5 50 L76 57\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><circle cx=\"77\" cy=\"58\" r=\"3.2\" fill=\"#141414\"/><path d=\"M80 46 L80 74\" stroke=\"#b23a28\" stroke-width=\"3\"/><path d=\"M80 57 L106 57\" stroke=\"#b23a28\" stroke-width=\"3\"/><path d=\"M82 57 L82 74 L104 74 L104 57\" stroke=\"#b23a28\" stroke-width=\"3\"/><path d=\"M84 74 L84 100 M102 74 L102 100\" stroke=\"#b23a28\" stroke-width=\"3\"/><path d=\"M80 46 L80 100\" stroke=\"#b23a28\" stroke-width=\"3\"/></svg>", "door": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><g opacity=\".3\"><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><path d=\"M34 8.5 L86 8.5 L86 104 L34 104 Z\" stroke=\"#141414\" stroke-width=\"1.7\" fill=\"none\"/></svg>", "walk": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"66\" cy=\"108\" rx=\"24\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><circle cx=\"70\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M62.5 46 C62.5 40.5 65.2 38 69.4 38 L70.6 38 C74.8 38 77.5 40.5 77.5 46 L80 84 L60 84 Z\" fill=\"#141414\"/><path d=\"M63 84 L56 102 M76 84 L82 101\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M62 52 L50 60\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"26\" y=\"64\" width=\"22\" height=\"24\" rx=\"2.5\" stroke=\"#b23a28\" stroke-width=\"2\" fill=\"none\"/><path d=\"M44 64 L48 59\" stroke=\"#b23a28\" stroke-width=\"2\"/><circle cx=\"49\" cy=\"58\" r=\"3.4\" fill=\"#141414\"/><path d=\"M16 107 L30 107 M38 107 L52 107 M60 107 L74 107 M82 107 L96 107\" stroke=\"#141414\" stroke-width=\"1\" opacity=\".25\"/></svg>", "ledger": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M52.5 56 L45 64\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M67.5 56 L75 64\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M42 62 L60 57.5 L78 62 L78 80 L60 75.5 L42 80 Z\" fill=\"#fffdf7\" stroke=\"#141414\" stroke-width=\"1.5\"/><path d=\"M46 66 L57.5 63.5 M46 71 L57.5 68.5\" stroke=\"#b23a28\" stroke-width=\"1.7\"/><path d=\"M62.5 63.5 L74 66 M62.5 68.5 L74 71\" stroke=\"#b23a28\" stroke-width=\"1.7\"/><circle cx=\"42\" cy=\"66\" r=\"3.2\" fill=\"#141414\"/><circle cx=\"78\" cy=\"66\" r=\"3.2\" fill=\"#141414\"/><circle cx=\"72\" cy=\"54.5\" r=\"5.8\" fill=\"#fffdf7\" stroke=\"#b23a28\" stroke-width=\"2.2\"/></svg>", "anchor": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"38\" y=\"99\" width=\"44\" height=\"7\" rx=\"2.5\" fill=\"#b23a28\"/></svg>", "bubble": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"76\" y=\"24\" width=\"36\" height=\"27\" rx=\"9\" stroke=\"#b23a28\" stroke-width=\"2.6\" fill=\"none\"/><path d=\"M82 50 L76 62 L90 50\" stroke=\"#b23a28\" stroke-width=\"2.6\" fill=\"none\"/></svg>", "toolbox": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"72\" y=\"64\" width=\"36\" height=\"26\" rx=\"2\" stroke=\"#b23a28\" stroke-width=\"2.6\" fill=\"none\"/><path d=\"M72 72 L108 72\" stroke=\"#b23a28\" stroke-width=\"1.8\" opacity=\".65\"/><path d=\"M84 64 C84 56 96 56 96 64\" stroke=\"#b23a28\" stroke-width=\"2.4\"/><rect x=\"86\" y=\"68\" width=\"10\" height=\"7\" rx=\"1.5\" stroke=\"#b23a28\" stroke-width=\"2\" fill=\"none\"/></svg>", "limited": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M84 42 L84 30 L95 30\" stroke=\"#b23a28\" stroke-width=\"2\"/><rect x=\"82\" y=\"42\" width=\"23\" height=\"19\" rx=\"3\" stroke=\"#b23a28\" stroke-width=\"2.6\" fill=\"none\"/><circle cx=\"88\" cy=\"51.5\" r=\"2.2\" fill=\"#b23a28\"/></svg>", "water": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M79 54 L105 54 L100 92 L84 92 Z\" stroke=\"#b23a28\" stroke-width=\"2.6\" fill=\"none\"/><ellipse cx=\"92\" cy=\"54\" rx=\"13\" ry=\"3.2\" stroke=\"#b23a28\" stroke-width=\"2.4\" fill=\"none\"/><path d=\"M81.5 70 C85 72.4 99 72.4 102.5 70\" stroke=\"#b23a28\" stroke-width=\"2\" opacity=\".6\"/></svg>", "commuter": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M67.5 50 L79 62\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"76\" y=\"66\" width=\"34\" height=\"24\" rx=\"3\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M82 66 C82 58 88 58 88 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M98 66 C98 58 104 58 104 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M76 76 L110 76\" stroke=\"#b23a28\" stroke-width=\"2\" opacity=\".75\"/><rect x=\"88\" y=\"73\" width=\"10\" height=\"6\" rx=\"1.5\" stroke=\"#b23a28\" stroke-width=\"1.8\" fill=\"none\"/></svg>", "shoulder": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"84\" y=\"60\" width=\"16\" height=\"32\" rx=\"4\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M86 60 C86 49 98 49 98 60\" stroke=\"#b23a28\" stroke-width=\"2.4\" fill=\"none\"/><path d=\"M84 67 L100 67\" stroke=\"#b23a28\" stroke-width=\"1.8\" opacity=\".6\"/><path d=\"M67 54 C72 58 78 61 84 63\" stroke=\"#141414\" stroke-width=\"2.8\" stroke-linecap=\"round\"/></svg>", "tote": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M70 56 L112 56 L106 96 L78 96 Z\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M82 56 C82 45 89 45 89 56\" stroke=\"#b23a28\" stroke-width=\"2.3\" fill=\"none\"/><path d=\"M97 56 C97 45 104 45 104 56\" stroke=\"#b23a28\" stroke-width=\"2.3\" fill=\"none\"/></svg>", "mini": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M96 64 C90 56 84 52 78 49\" stroke=\"#b23a28\" stroke-width=\"2\" stroke-dasharray=\"3 2.6\" fill=\"none\"/><circle cx=\"78\" cy=\"49\" r=\"2\" fill=\"#141414\"/><rect x=\"89\" y=\"63\" width=\"16\" height=\"13\" rx=\"3\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/></svg>", "vintage": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"76\" y=\"66\" width=\"34\" height=\"24\" rx=\"3\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M76 78 C88 84 98 84 110 78\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><rect x=\"88\" y=\"72\" width=\"10\" height=\"7\" rx=\"1.5\" stroke=\"#b23a28\" stroke-width=\"1.9\" fill=\"none\"/><path d=\"M84 66 C84 58 100 58 100 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/></svg>", "birkin": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M67 52 L74 62\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"74\" y=\"66\" width=\"36\" height=\"27\" rx=\"2.5\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M74 76 L110 76\" stroke=\"#b23a28\" stroke-width=\"2.2\" opacity=\".85\"/><path d=\"M84 66 C84 58 90 58 90 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M94 66 C94 58 100 58 100 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><rect x=\"88\" y=\"72\" width=\"8\" height=\"7\" rx=\"1.2\" stroke=\"#b23a28\" stroke-width=\"1.7\" fill=\"none\"/></svg>", "lady": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M67 52 L77 60\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"77\" y=\"66\" width=\"31\" height=\"26\" rx=\"3\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M83 66 C83 55 92 55 92 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M96 66 C96 55 105 55 105 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M82 74 L92 66 M82 84 L100 69 M88 92 L106 78\" stroke=\"#b23a28\" stroke-width=\"1.4\" opacity=\".55\"/><path d=\"M84 78 L102 78 M84 86 L102 86\" stroke=\"#b23a28\" stroke-width=\"1.2\" opacity=\".3\"/></svg>", "flap": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"77\" y=\"68\" width=\"33\" height=\"25\" rx=\"2.5\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M77 78 L110 78\" stroke=\"#b23a28\" stroke-width=\"2.1\" opacity=\".85\"/><path d=\"M96 68 C92 58 86 52 79 47\" stroke=\"#b23a28\" stroke-width=\"1.7\" stroke-dasharray=\"2.6 2.4\" fill=\"none\"/><circle cx=\"78\" cy=\"46\" r=\"2\" fill=\"#141414\"/><rect x=\"90\" y=\"74\" width=\"8\" height=\"6\" rx=\"1.2\" stroke=\"#b23a28\" stroke-width=\"1.6\" fill=\"none\"/></svg>", "jackie": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M67 54 L78 62\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M74 70 C74 62 80 58 86 58 L104 58 C110 58 112 64 110 70 L106 88 C104 93 98 94 94 92 L80 86 C76 84 74 78 74 70\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M86 58 C86 48 96 48 96 58\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/></svg>", "neverfull": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M67 54 L74 62\" stroke=\"#141414\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M72 66 L112 66 L106 97 L78 97 Z\" stroke=\"#b23a28\" stroke-width=\"2.8\" fill=\"none\"/><path d=\"M82 66 C82 51 90 51 90 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M96 66 C96 51 104 51 104 66\" stroke=\"#b23a28\" stroke-width=\"2.2\" fill=\"none\"/><path d=\"M72 78 L78 78 M112 78 L106 78\" stroke=\"#b23a28\" stroke-width=\"1.8\" opacity=\".6\"/></svg>", "person": "<svg viewBox=\"0 0 120 120\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\"><ellipse cx=\"60\" cy=\"108\" rx=\"22\" ry=\"2.4\" fill=\"#141414\" opacity=\".12\"/><path d=\"M57.2 33 L62.8 33 L63 42 L57 42 Z\" fill=\"#141414\"/><circle cx=\"60\" cy=\"27\" r=\"7.2\" fill=\"#141414\"/><path d=\"M52.5 46 C52.5 40.5 55.2 38 59.4 38 L60.6 38 C64.8 38 67.5 40.5 67.5 46 L70 86 L50 86 Z\" fill=\"#141414\"/><path d=\"M53.4 86 L53.4 104 M66.6 86 L66.6 104\" stroke=\"#141414\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"};
+var QUESTIONS = [{"q": "他加班到十一点，发来一句「今天有点累」。你第一反应——", "a": [{"t": "陪他把今天的事一件件讲完", "r": "bubble"}, {"t": "给他点一份他常吃的，让他吃了再睡", "r": "toolbox"}, {"t": "回一句「那你自己安排」，不追问", "r": "limited"}, {"t": "回「累就早点睡」，然后继续做自己的事", "r": "water"}]}, {"q": "你们第一次一起过周末，你更想——", "a": [{"t": "把行程、餐厅、路线都排好", "r": "toolbox"}, {"t": "不排，当天想去哪去哪", "r": "limited"}, {"t": "都行，他定就好", "r": "water"}, {"t": "留半天什么都不安排，就在家待着", "r": "anchor"}]}, {"q": "他带你去他的朋友聚会，散场后你最希望听到——", "a": [{"t": "「你对象挺有性格」", "r": "limited"}, {"t": "「你对象办事特别利索」", "r": "toolbox"}, {"t": "「你对象挺靠谱的」", "r": "anchor"}, {"t": "「你对象说话真舒服」", "r": "bubble"}]}, {"q": "吵完架，最后通常是——", "a": [{"t": "冷战两天，然后自然和好", "r": "water"}, {"t": "我先找他，把话说开", "r": "anchor"}, {"t": "我把自己的想法讲清楚，他听着", "r": "bubble"}, {"t": "谁也别哄谁，吵到他真想明白", "r": "limited"}]}, {"q": "你被夸得最多的一句是——", "a": [{"t": "「跟你在一起特别安心」", "r": "anchor"}, {"t": "「你懂我在说什么」", "r": "bubble"}, {"t": "「你挺特别的」", "r": "limited"}, {"t": "「有事找你准没错」", "r": "toolbox"}]}, {"q": "见他爸妈那天，你——", "a": [{"t": "跟他爸妈聊开了，把冷场接住", "r": "bubble"}, {"t": "做自己，不刻意迎合", "r": "limited"}, {"t": "全程礼貌，不多话", "r": "water"}, {"t": "提前问清忌讳，不出错", "r": "anchor"}]}, {"q": "他半夜发一句「在吗」，你——", "a": [{"t": "第二天早上再回，不解释", "r": "limited"}, {"t": "先把他要的东西准备好再回", "r": "toolbox"}, {"t": "秒回，问他出什么事了", "r": "anchor"}, {"t": "回，然后陪他把事情讲完", "r": "bubble"}]}, {"q": "你最怕自己在他那儿变成——", "a": [{"t": "他挑不出毛病，也说不出喜欢什么", "r": "water"}, {"t": "他离不开我，但也不为我留下", "r": "anchor"}, {"t": "他跟我说的最多，最后选的是别人", "r": "bubble"}, {"t": "他记不住我，只记得我难搞", "r": "limited"}]}, {"q": "他临时说「我妈明天来」，你会——", "a": [{"t": "当天把家里收拾好，把流程过一遍", "r": "anchor"}, {"t": "告诉他我明天有安排，改不了", "r": "limited"}, {"t": "行吧，来就来", "r": "water"}, {"t": "先把他的紧张聊下去，再一起准备", "r": "bubble"}]}, {"q": "他手机里给你的备注，最可能是——", "a": [{"t": "一个外号", "r": "limited"}, {"t": "全名", "r": "water"}, {"t": "只有你俩懂的称呼", "r": "bubble"}, {"t": "名字后面加一句提醒", "r": "anchor"}]}, {"q": "他失业那阵，你做得最多的是——", "a": [{"t": "不劝他，照常过日子", "r": "limited"}, {"t": "陪着，不多嘴", "r": "water"}, {"t": "听他讲，帮他把情绪放下来", "r": "bubble"}, {"t": "帮他改简历、打听机会、跑腿", "r": "toolbox"}]}, {"q": "他问「我是不是有问题」，你——", "a": [{"t": "说没有，挺好的", "r": "water"}, {"t": "先问他为什么这么想", "r": "bubble"}, {"t": "列三件他做对的事", "r": "toolbox"}, {"t": "告诉他不管怎样我都在", "r": "anchor"}]}, {"q": "你更受不了对方哪一种——", "a": [{"t": "说话永远说不到点上", "r": "bubble"}, {"t": "答应的事永远做不到", "r": "toolbox"}, {"t": "遇事就消失，不交代", "r": "anchor"}, {"t": "对谁都好，没有区别", "r": "limited"}]}, {"q": "关系走到第二年，你最想留住的是——", "a": [{"t": "日子能照常运转", "r": "toolbox"}, {"t": "彼此还有一点火气", "r": "limited"}, {"t": "不出事、不吵架", "r": "water"}, {"t": "还能聊到半夜", "r": "bubble"}]}, {"q": "他的朋友里有人追过你，现在一起吃饭，你——", "a": [{"t": "该怎样怎样，不回避", "r": "limited"}, {"t": "该安排的安排好，别让场面难做", "r": "toolbox"}, {"t": "主动把事情摆到明面上", "r": "anchor"}, {"t": "用玩笑把气氛带过去", "r": "bubble"}]}, {"q": "「被需要」最像哪一种——", "a": [{"t": "随叫随到，但从不算数", "r": "water"}, {"t": "他知道出事能找谁", "r": "anchor"}, {"t": "他难受时只想找你", "r": "bubble"}, {"t": "他一堆事都靠你办", "r": "toolbox"}]}, {"q": "他夸你「你真是太好了」，你——", "a": [{"t": "那就别辜负", "r": "anchor"}, {"t": "我好在哪儿，你说说", "r": "bubble"}, {"t": "那就帮我分担点", "r": "toolbox"}, {"t": "好有什么用", "r": "limited"}]}, {"q": "两人一起出门，你负责——", "a": [{"t": "聊天，路上不冷场", "r": "bubble"}, {"t": "决定去哪，不管别人意见", "r": "limited"}, {"t": "跟着走，都行", "r": "water"}, {"t": "查路线、订位、带纸巾", "r": "toolbox"}]}, {"q": "冷战第三天，你心里最想的是——", "a": [{"t": "他要真在乎，会来找我", "r": "limited"}, {"t": "先把该办的事照常办完", "r": "toolbox"}, {"t": "我先想清楚，别把事拖着", "r": "anchor"}, {"t": "我憋了一堆话想说", "r": "bubble"}]}, {"q": "你性格最值钱的地方是——", "a": [{"t": "没有攻击性，谁都能处", "r": "water"}, {"t": "稳，不会跑", "r": "anchor"}, {"t": "会听，能接住人", "r": "bubble"}, {"t": "有脾气，有分量", "r": "limited"}]}, {"q": "他发来一张自拍，你——", "a": [{"t": "顺着他的话接，夸到点上", "r": "bubble"}, {"t": "帮他看看哪里能改", "r": "toolbox"}, {"t": "回一个表情，不多解释", "r": "water"}, {"t": "说好看，然后问他今天怎么样", "r": "anchor"}]}, {"q": "关系里你最不擅长——", "a": [{"t": "离开一个人", "r": "anchor"}, {"t": "拒绝一个正在难受的人", "r": "bubble"}, {"t": "低头", "r": "limited"}, {"t": "说出自己想要什么", "r": "water"}]}, {"q": "有人问「你俩怎么在一起的」，他会说——", "a": [{"t": "她特别，说不上来", "r": "limited"}, {"t": "挺合适的，就在一起了", "r": "water"}, {"t": "她让我踏实", "r": "anchor"}, {"t": "跟她有话说", "r": "bubble"}]}, {"q": "你更想被记住的是——", "a": [{"t": "我最难的时候她在", "r": "anchor"}, {"t": "她懂我", "r": "bubble"}, {"t": "她帮我扛过", "r": "toolbox"}, {"t": "她跟别人不一样", "r": "limited"}]}, {"q": "他半夜说「算了，没事」，你——", "a": [{"t": "追问，把那半句挖出来", "r": "bubble"}, {"t": "行，那就没事", "r": "limited"}, {"t": "那就睡吧", "r": "water"}, {"t": "不问，但第二天留心", "r": "anchor"}]}, {"q": "你的相册里最多的是——", "a": [{"t": "自己的照片", "r": "limited"}, {"t": "别人让我办的事的截图", "r": "toolbox"}, {"t": "两个人一起的", "r": "anchor"}, {"t": "聊天截图", "r": "bubble"}]}, {"q": "关系里你最容易累在——", "a": [{"t": "一直在兜底", "r": "anchor"}, {"t": "一直在听", "r": "bubble"}, {"t": "一直在办", "r": "toolbox"}, {"t": "一直在忍", "r": "limited"}]}, {"q": "他做错事，你更可能——", "a": [{"t": "算了，不提了", "r": "water"}, {"t": "先说清楚，再一起收拾", "r": "anchor"}, {"t": "先问他为什么这么做", "r": "bubble"}, {"t": "摆明了，让他知道后果", "r": "limited"}]}, {"q": "你心里那个「我值几分」，取决于——", "a": [{"t": "他有没有真的听懂我", "r": "bubble"}, {"t": "我有没有真的帮上他", "r": "toolbox"}, {"t": "他有没有把我当唯一", "r": "limited"}, {"t": "他有没有真的留下", "r": "anchor"}]}, {"q": "如果这个评价只能由他给，你最怕他说——", "a": [{"t": "你挺好的，但不是我要的", "r": "bubble"}, {"t": "有你在确实方便", "r": "toolbox"}, {"t": "你太难搞了", "r": "limited"}, {"t": "你值得更好的人", "r": "anchor"}]}];
+var TITLE = "抛开颜值你的性格在男女关系中值多少分";
+var KICKER = "你的性格值";
+var idx = 0, answers = [];
+var $ = function (id) { return document.getElementById(id); };
+function escapeHtml(t) {
+  return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function show(id) {
+  var list = document.querySelectorAll("section");
+  for (var i = 0; i < list.length; i++) list[i].classList.remove("on");
+  $(id).classList.add("on");
+  window.scrollTo(0, 0);
+}
+function render() {
+  var q = QUESTIONS[idx];
+  $("num").textContent = (idx + 1);
+  $("prog").style.width = ((idx + 1) / QUESTIONS.length * 100) + "%";
+  $("qtext").textContent = q.q;
+  var box = $("opts");
+  box.innerHTML = "";
+  q.a.forEach(function (o) {
+    var b = document.createElement("button");
+    b.className = "opt";
+    b.textContent = o.t;
+    b.onclick = function () { pick(o.r); };
+    box.appendChild(b);
+  });
+  $("back").style.display = idx === 0 ? "none" : "block";
+}
+function pick(r) {
+  answers[idx] = r;
+  if (idx < QUESTIONS.length - 1) { idx++; render(); }
+  else { show("loading"); setTimeout(finish, 1000); }
+}
+function tally() {
+  var c = {};
+  answers.forEach(function (r) { c[r] = (c[r] || 0) + 1; });
+  var best = -1, win = [];
+  Object.keys(c).forEach(function (k) {
+    if (c[k] > best) { best = c[k]; win = [k]; } else if (c[k] === best) { win.push(k); }
+  });
+  if (win.length === 1) return win[0];
+  var tail = {}, tailBest = -1, tailWin = [];
+  answers.slice(-3).forEach(function (r) { tail[r] = (tail[r] || 0) + 1; });
+  win.forEach(function (k) {
+    var n = tail[k] || 0;
+    if (n > tailBest) { tailBest = n; tailWin = [k]; } else if (n === tailBest) { tailWin.push(k); }
+  });
+  if (tailWin.length === 1) return tailWin[0];
+  return answers[answers.length - 1];
+}
+var CURRENT = null;
+function finish() {
+  var key = tally(), r = RESULTS[key];
+  CURRENT = r;
+  $("rk").innerHTML = r.sc
+    ? escapeHtml(KICKER) + ' <span class="sc">' + escapeHtml(r.sc) + ' 分</span>'
+    : escapeHtml(KICKER);
+  $("rword").textContent = r.w;
+  $("rsub").textContent = r.sub;
+  $("rcard").textContent = r.card;
+  if (r.concl) { $("rconcl").innerHTML = r.concl; }
+  $("fig").innerHTML = FIGURES[r.f] || FIGURES.person;
+  var box = $("rtags"); box.innerHTML = "";
+  r.tags.forEach(function (t) {
+    var s = document.createElement("span");
+    s.className = "rtag"; s.textContent = "#" + t;
+    box.appendChild(s);
+  });
+  show("result");
+}
+function toast(msg) {
+  var t = $("toast");
+  t.textContent = msg; t.classList.add("on");
+  setTimeout(function () { t.classList.remove("on"); }, 1800);
+}
+$("start").onclick = function () { idx = 0; answers = []; render(); show("quiz"); };
+$("back").onclick = function () { if (idx > 0) { idx--; render(); } };
+$("again").onclick = function () { idx = 0; answers = []; show("intro"); };
+$("share").onclick = function () {
+  var w = $("rword").textContent;
+  var sc = CURRENT ? CURRENT.sc : "";
+  var text = sc
+    ? KICKER + sc + " 分，是「" + w + "」。" + TITLE
+    : KICKER + "「" + w + "」。" + TITLE;
+  if (navigator.share) {
+    navigator.share({ title: TITLE, text: text }).catch(function () { toast("截图保存这张卡片，直接发出去就行。"); });
+  } else {
+    toast("截图保存这张卡片，直接发出去就行。");
+  }
+};
+</script>
+</body>
+</html>

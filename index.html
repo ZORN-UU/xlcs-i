@@ -38,8 +38,11 @@ h1{font-size:34px;line-height:1.42;font-weight:800;letter-spacing:-.02em;margin:
 .bar i{display:block;height:100%;background:var(--accent);border-radius:100px;transition:width .28s ease}
 .qtext{font-size:23px;font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-bottom:22px}
 .opts{display:flex;flex-direction:column;gap:10px}
-.opt{width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:100px;padding:15px 20px;font-size:16px;line-height:1.5;color:var(--ink);font-family:inherit}
+.opt{width:100%;text-align:left;display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:100px;padding:13px 18px;font-size:16px;line-height:1.5;color:var(--ink);font-family:inherit}
+.optn{flex:0 0 23px;height:23px;border-radius:100px;background:#ece1c9;color:#7a6c58;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:0;font-style:normal}
+.optt{flex:1;text-align:left}
 .opt:active{background:#141414;color:var(--card);border-color:#141414}
+.opt:active .optn{background:rgba(255,253,247,.16);color:#fffdf7}
 .back{margin-top:18px;font-size:13px;color:var(--muted);background:none;border:0;font-family:inherit;align-self:center}
 .loading{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
 .loading p{font-size:14px;color:#5f584c;letter-spacing:.06em}
@@ -141,10 +144,17 @@ function render() {
   $("qtext").textContent = q.q;
   var box = $("opts");
   box.innerHTML = "";
-  q.a.forEach(function (o) {
+  q.a.forEach(function (o, i) {
     var b = document.createElement("button");
     b.className = "opt";
-    b.textContent = o.t;
+    var n = document.createElement("span");
+    n.className = "optn";
+    n.textContent = String(i + 1);
+    var t = document.createElement("span");
+    t.className = "optt";
+    t.textContent = o.t;
+    b.appendChild(n);
+    b.appendChild(t);
     b.onclick = function () { pick(o.r); };
     box.appendChild(b);
   });
